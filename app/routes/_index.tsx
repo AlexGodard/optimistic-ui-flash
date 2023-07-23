@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import { redirect } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -6,6 +7,10 @@ export const meta: V2_MetaFunction = () => {
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
+
+export const loader = () => {
+  return redirect("/fruit/1")
+}
 
 export default function Index() {
   return (
